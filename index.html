@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String2Arrary</title>
+</head>
+
+<body>
+    <h1>String2Arrary</h1>
+    <textarea id="in" cols="30" rows="10"></textarea>
+    </textarea>
+    <button id="btn" onclick="String2Arrary()">转换</button>
+    <textarea id="out" cols="30" rows="10"></textarea>
+</body>
+<script>
+    function String2Arrary() {
+        document.getElementById("out").value = JSON.stringify(document.getElementById("in").value.split('\n').filter(
+            function (n) {
+                return n
+            }));
+    }
+    document.getElementById("in").value = '将内容复制在这里\n点击转换\n\n会忽略多余换行\n\n\n就像这样'
+    String2Arrary()
+</script>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    textarea {
+        margin: 10px;
+    }
+</style>
+
+</html>
